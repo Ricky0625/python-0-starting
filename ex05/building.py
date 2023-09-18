@@ -42,7 +42,7 @@ def count_punctuation(input: str) -> int:
 
     # triple single quotes are used to create multiline string literals
     # can inlude line breaks without the need for escaping characters
-    marks = '''!"#$%&'()*+,-./:;<=>?@[]^_`{|}~'''
+    marks = '''!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~'''
     return len([x for x in input if x in marks])
 
 
@@ -50,7 +50,7 @@ def count_space(input: str) -> int:
 
     """count spaces, including newline/carriage return"""
 
-    return input.count(" ") + input.count("\n")
+    return len([x for x in input if x.isspace()])
 
 
 def count_digit(input: str) -> int:
@@ -80,7 +80,8 @@ def read_input() -> str:
 
     str = ""
     try:
-        str = input("What is the text to count?\n")
+        print("What is the text to count?")
+        str = sys.stdin.readline()
     except EOFError:
         pass
     return str
