@@ -1,18 +1,17 @@
 def NULL_not_found(object: any) -> int:
     objectType = type(object)
-    objectTypeName = objectType.__name__
     prefix = ""
     suffix = ""
 
-    if objectTypeName == "NoneType" and object == None:
+    if object == None:
         prefix = "Nothing"
-    elif objectTypeName == "float" and str(object) == "nan":
+    elif objectType.__name__ == "float" and str(object) == "nan":
         prefix = "Cheese"
-    elif objectTypeName == "int" and object == 0:
+    elif object == 0:
         prefix = "Zero"
-    elif objectTypeName == "str" and object == "":
+    elif object == "":
         prefix = "Empty"
-    elif objectTypeName == "bool" and object == False:
+    elif object == False:
         prefix = "Fake"
     
     if prefix == "" and suffix == "":
