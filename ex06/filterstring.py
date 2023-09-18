@@ -2,10 +2,10 @@ import sys
 from ft_filter import ft_filter
 
 
-def validate_str(str: str) -> bool:
+def is_valid_str(str: str) -> bool:
 
     """
-    validate_str() -> bool
+    is_valid_str() -> bool
 
     Check if string only consists of alnum or spaces.
     This is by creating a new list of alnum/spaces in the str and compare
@@ -33,7 +33,7 @@ def filterstring():
 
         # validate string if it only consists of alnum or spaces
         arg = sys.argv[1]
-        assert validate_str(arg)
+        assert is_valid_str(arg)
 
         # split by spaces
         value_strs = arg.split()
