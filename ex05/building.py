@@ -81,11 +81,9 @@ def read_input() -> str:
     str = ""
     try:
         str = input("What is the text to count?\n")
-        while (str):
-            str += "\n"
-            str += input("")
     except EOFError:
-        return str
+        pass
+    return str
 
 
 def get_input() -> str:
