@@ -1,8 +1,22 @@
 def get_progress_bar(progress: int):
+
+    """
+    get_progress_bar(progress: int) -> None
+
+    get progress bar based on current index and width of console
+    """
+
     return f"{'=' * (progress - 1)}>{' ' * (100 - progress)}"
 
 
 def ft_tqdm(lst: range) -> None:
+
+    """
+    ft_tqdm(lst: range) -> None
+
+    A fake tqdm
+    """
+
     console_width = 100
     max_range = max(lst) - lst.start + 1
     step = max_range // 20   # display progress every 5%

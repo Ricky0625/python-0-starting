@@ -75,6 +75,9 @@ def text_to_morse(str: str):
 
 
 if __name__ == "__main__":
+
+    """main function"""
+
     try:
         num_of_args = len(sys.argv)
         assert num_of_args == 2, "the arguments are bad"
