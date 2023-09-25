@@ -7,12 +7,12 @@ def NULL_not_found(object: any) -> int:
         prefix = "Nothing"
     elif objectType.__name__ == "float" and str(object) == "nan":
         prefix = "Cheese"
+    elif object is False:
+        prefix = "Fake"
     elif object == 0:
         prefix = "Zero"
     elif object == "":
         prefix = "Empty"
-    elif object is False:
-        prefix = "Fake"
 
     if prefix == "" and suffix == "":
         print("Type not found")
